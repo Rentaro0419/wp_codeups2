@@ -1,0 +1,38 @@
+@use "global" as *;
+
+.error {
+  color: $red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: rem(40);
+  
+  display: none;
+}
+
+.error p {
+  text-align: left;
+  @include mq(md) {
+    text-align: center;
+  }
+}
+
+.error.is-show {
+    display: block;
+    display: flex;
+    justify-content: center;
+}
+
+
+.wpcf7-not-valid{
+  background: rgba(201, 72, 0, 0.2);
+    border: 0.0625rem solid $red;
+    color: $white;
+    display: block;
+}
+
+.wpcf7-not-valid-tip{
+  display: none !important;
+}
+
+// wpcf7-form-control wpcf7-checkbox wpcf7-validates-as-required wpcf7-exclusive-checkbox contactForm__checkbox wpcf7-not-valid

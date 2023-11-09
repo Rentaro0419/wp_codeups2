@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.information-page {
+  margin-top: rem(121);
+  position: relative;
+  @include mq(md) {
+    margin-top: rem(150);
+  }
+}
+
+.information-page__bg {
+  position: absolute;
+  top: rem(-93);
+  left: calc(50% - min(48%, 40rem));
+  z-index: -1;
+  @include mq(md) {
+    top: rem(-70);
+  }
+}
+
+.information-page__bg img {
+  width: rem(120);
+  max-width: 100%;
+  aspect-ratio: 120/55;
+  @include mq(md) {
+    width: rem(301);
+    aspect-ratio: 301/138;
+  }
+}

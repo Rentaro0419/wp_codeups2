@@ -1,0 +1,48 @@
+@use "global" as *;
+
+.category {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: rem(16);
+  column-gap: rem(21);
+  @include mq(md) {
+    display: block;
+    gap: rem(32);
+  }
+}
+
+.category__tab {
+  width: 100%;
+  max-width: 100%;
+  text-transform: uppercase;
+  color: $green;
+  border: 1px solid $green;
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  padding: rem(6);
+  font-weight: $regular;
+  text-align: center;
+  @include mq(md) {
+    display: inline-block;
+    width: rem(169);
+
+  }
+}
+
+.category__tab:not(:first-child){
+  @include mq(md){
+    margin-left: rem(30);
+    }
+}
+
+.category__tab:hover {
+  background: $green;
+  color: $white;
+  transition: all 0.3s;
+}
+
+.category__tab.current {
+  background: $green;
+  color: $white;
+}

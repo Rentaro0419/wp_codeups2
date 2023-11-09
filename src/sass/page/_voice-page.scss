@@ -1,0 +1,52 @@
+@use "global" as *;
+
+.voice-page {
+  margin-top: rem(52);
+  position: relative;
+  @include mq(md) {
+    margin-top: rem(150);
+  }
+}
+
+.voice-page__bg {
+  position: absolute;
+  top: rem(-24);
+  left: 0;
+  z-index: 5;
+  @include mq(md) {
+    top: rem(-70);
+    left: calc(50% - min(55%, 48rem));
+    z-index: -1;
+  }
+}
+
+.voice-page__bg img {
+  width: rem(120);
+  max-width: 100%;
+  aspect-ratio: 120/55;
+  @include mq(md) {
+    width: rem(301);
+    aspect-ratio: 301/138;
+  }
+}
+
+
+.voice-page__block{
+  margin-top: rem(40);
+}
+
+.voice-page__items{
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  gap: rem(40);
+  @include mq(md){
+      grid-template-columns: repeat(2,1fr);
+      row-gap: rem(40);
+      column-gap: rem(80);
+  }
+}
+
+.voice-page__pagenavi .wp-pagenavi{
+  margin-top: rem(72);
+  justify-content: center;
+}

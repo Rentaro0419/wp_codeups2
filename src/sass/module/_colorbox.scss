@@ -1,0 +1,39 @@
+@use "global" as *;
+
+// .colorbox{
+//   position: relative;
+// }
+// .colorbox.color{
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 100;
+//   background-color: $green;
+// }
+
+// .colorbox picture{
+//   display: flex;
+//   width: 100%;
+// }
+
+
+.colorbox{
+    position: relative;
+}
+
+.colorbox .color{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: $green;
+}
+
+.colorbox img{
+    display: block;
+    width: 100%;
+}

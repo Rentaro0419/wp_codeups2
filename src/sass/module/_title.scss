@@ -1,0 +1,58 @@
+@use "global" as *;
+
+.title{
+  text-align: center;
+}
+
+.title-en{
+  display: block;
+  font-family: $forth-font-family;
+  line-height: calc(40/32);
+  font-size: rem(32);
+  @include mq(md){
+        font-size: rem(40);
+        line-height: calc(40/40);
+  }
+}
+
+.title-en--large{
+  font-size: rem(80);
+  line-height: calc(80/80);
+  @include mq(md){
+    font-size: rem(80);
+  }
+}
+
+
+.title-en::first-letter{
+  color: $green;
+}
+
+.title-en--white{
+  @include mq(md){
+    color: $white;
+  }
+}
+
+.title-en--white::first-letter{
+  @include mq(md){
+    color: $green2;
+  }
+}
+
+.title-jp{
+  font-size: rem(12);
+  line-height: calc(18/12);
+  font-weight: $regular;
+  color: $green;
+  margin-top: rem(4);
+  @include mq(md){
+      margin-top: rem(8);
+  }
+}
+
+.title-jp--white{
+  @include mq(md){
+    color: $white;
+  }
+}

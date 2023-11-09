@@ -1,0 +1,175 @@
+@use "global" as *;
+
+.single {
+  position: relative;
+  margin-top: rem(52);
+  @include mq(md) {
+    margin-top: rem(150);
+  }
+}
+
+.single__bg {
+  position: absolute;
+  top: rem(-24);
+  left: 0;
+  z-index: 5;
+  @include mq(md) {
+    top: rem(-70);
+    left: calc(50% - min(55%, 48rem));
+    z-index: -1;
+  }
+}
+
+.single__bg img {
+  width: rem(120);
+  max-width: 100%;
+  aspect-ratio: 120/55;
+  @include mq(md) {
+    width: rem(301);
+    aspect-ratio: 301/138;
+  }
+}
+
+
+.single__text {
+  width: inherit;
+  margin-top: rem(24);
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  @include mq(md) {
+    margin-top: rem(40);
+    gap: rem(40);
+  }
+}
+
+.single__content time {
+  font-size: rem(14);
+  line-height: calc(18 / 14);
+  font-family: $forth-font-family;
+}
+
+.single__content h2 {
+  border-bottom: 1px solid $green;
+  padding-bottom: rem(4);
+  font-weight: $medium;
+  font-size: rem(24);
+  @include mq(md) {
+    font-size: rem(32);
+  }
+}
+
+.single__content p{
+  font-size: rem(16);
+  line-height: calc(24/16);
+}
+
+.single__content ul {
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
+}
+
+.single__content ul > li {
+  padding-left: 1.5em;
+  position: relative;
+}
+
+.single__content ul > li:before {
+  content: url(../../assets/images/common/starfish.svg);
+  position: absolute;
+  top: 0.2em; /* アイコンの上側位置調整 */
+  left: 0; /* アイコンの左側位置調整 */
+}
+
+.single__pagenavi{
+  justify-content: center;
+  display: flex;
+  position: relative;
+  margin-top: rem(40);
+  @include mq(md){
+    margin-top: rem(80);   
+  }
+}
+
+// single.php用
+
+.single__pagenavi .prev-btn:hover {
+  background: $green;
+  transition: all 0.3s;
+  opacity: 1;
+}
+
+.single__pagenavi .next-btn:hover {
+  background: $green;
+  transition: all 0.3s;
+  opacity: 1;
+}
+
+
+.single__pagenavi .prev-btn {
+  display: inline-block;
+  margin-right: rem(24);
+  position: relative;
+  width: rem(39);
+  height: rem(39);
+  border: 1px solid $green;
+  @include mq(md) {
+    margin-right: rem(40);
+  }
+}
+
+
+.single__pagenavi .next-btn {
+  display: inline-block;
+  margin-left: rem(24);
+  position: relative;
+  width: rem(39);
+  height: rem(39);
+    border: 1px solid $green;
+
+  @include mq(md) {
+    margin-left: rem(40);
+  }
+}
+
+.single__pagenavi .prev-btn:before {
+  /* くの字の表示設定 */
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: rem(15); /* ②棒が長くなった分、右へ7px移動 */
+  width: 13px;
+  height: 13px;
+  border-top: 1px solid $green;
+  border-right: 1px solid $green;
+  transform: rotate(225deg);
+}
+
+.single__pagenavi .next-btn:before {
+  /* くの字の表示設定 */
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: rem(8); /* ②棒が長くなった分、右へ7px移動 */
+  width: 13px;
+  height: 13px;
+  border-top: 1px solid $green;
+  border-right: 1px solid $green;
+  transform: rotate(45deg);
+}
+
+.single__pagenavi .prev-btn:hover:before {
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+}
+
+.single__pagenavi .next-btn:hover:before {
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+}
+

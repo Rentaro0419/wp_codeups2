@@ -1,0 +1,8 @@
+@use "global" as *;
+
+.pagetop{
+  position: fixed;
+  right: rem(15);
+  bottom: rem(16);
+  z-index: 30;
+}

@@ -1,0 +1,87 @@
+@use "global" as *;
+
+.sitemap {
+  margin-top: rem(52);
+  @include mq(md) {
+    margin-top: rem(150);
+  }
+}
+
+.sitemap__nav {
+  margin-top: rem(28);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 1em;
+  @include mq(md) {
+    margin-top: rem(12);
+    grid-template-columns: repeat(4, 1fr);
+    display: flex;
+    justify-items: start;
+    gap: rem(110);
+  }
+}
+
+.sitemap__nav-items {
+  width: 100%;
+  max-width: 100%;
+}
+
+.sitemap__nav-item {
+  width: 100%;
+  max-width: 100%;
+  color: $black;
+  font-size: rem(16);
+  font-weight: $regular;
+}
+
+.sitemap__nav-item a {
+  width: 100%;
+  padding-top: rem(10);
+  padding-bottom: rem(10);
+  display: block;
+  text-indent: calc(1em + rem(4));
+  @include mq(md) {
+    padding-top: rem(12);
+    padding-bottom: rem(12);
+  }
+}
+
+.sitemap__nav-item:nth-child(2) {
+  @include mq(md) {
+    order: 2;
+  }
+}
+
+.sitemap__nav-item--bold {
+  font-weight: $bold;
+  display: flex;
+  align-items: center;
+  gap: rem(4);
+}
+
+.sitemap__nav-item--bold a {
+  text-indent: 0;
+}
+
+.sitemap__nav-item--bold::before {
+  padding-top: rem(5);
+  content: url(../../assets/images/common/starfish-black.svg);
+  scale: 1.1;
+}
+
+.sitemap__nav-item--padding a {
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+}
+
+.sitemap__nav-item--paddingbottom a {
+  padding-top: rem(20);
+  padding-bottom: rem(12);
+}
+
+.sitemap__nav-item--paddingbottom:before {
+  padding-top: rem(10);
+  content: url(../../assets/images/common/starfish-black.svg);
+  scale: 1.1;
+}

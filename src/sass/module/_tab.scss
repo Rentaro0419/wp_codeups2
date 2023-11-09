@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.tab{
+  display: inline-block;
+  background: $green2;
+  color: $green;
+  padding: rem(10);
+  cursor: pointer;
+  box-shadow: rem(0) rem(4) rem(4) rgba(0, 0, 0, 0.25);
+  @include mq(md){
+    padding: rem(13);
+  }
+}
+
+.tab__block{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: rem(8);
+}
+
+.tab img{
+  width: rem(64);
+  aspect-ratio: 1/1;
+}
+
+.tab p{
+  font-size: rem(14);
+  text-align: center;
+  @include mq(md){
+    font-size: rem(24);
+  }
+}
+
+.tab.active{
+  background: $green;
+  color: $white;
+}
+
+.tab.active img{
+  filter: brightness(0) invert(1);
+}

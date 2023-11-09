@@ -1,0 +1,80 @@
+@use "global" as *;
+
+
+.pagetop-btn {
+  display: inline-block;
+  width: rem(48);
+  height: rem(48);
+  border: 1px solid $green;
+  border-radius: 50%;
+  transform: rotate(90deg);
+  position: relative;
+
+  @include mq(md) {
+    width: rem(80);
+    height: rem(80);
+  }
+}
+
+.pagetop-btn:after {
+  position: absolute;
+  top: 47%;
+  left: 25%;
+  content: '';
+  color: $green;
+  width: rem(28);
+  height: rem(6);
+  border-top: solid 1px;
+  border-left: solid 1px;
+  transform: skew(45deg);
+  
+  @include mq(md) {
+    top: 49%;
+    width: rem(40);
+    height: rem(6);
+  }
+}
+
+
+
+/*リンクを右下に固定*/
+#page-top {
+	position: fixed;
+	right: 10px;
+	z-index: 2;
+    /*はじめは非表示*/
+	opacity: 0;
+	transform: translateY(100px);
+}
+
+/*　上に上がる動き　*/
+
+#page-top.UpMove{
+	animation: UpAnime 0.5s forwards;
+}
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+	transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+	transform: translateY(0);
+  }
+}
+
+/*　下に下がる動き　*/
+
+#page-top.DownMove{
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+	transform: translateY(0);
+  }
+  to {
+  	opacity: 1;
+	transform: translateY(100px);
+  }
+}

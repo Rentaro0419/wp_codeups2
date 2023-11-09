@@ -1,0 +1,62 @@
+@use "global" as *;
+
+.campaign-page{
+  position: relative;
+  margin-top: rem(52);
+  @include mq(md){
+      margin-top: rem(150);
+  }
+}
+
+.campaign-page__bg{
+  position: absolute;
+  top: rem(-24);
+  left: 0;
+  z-index: 5;
+  @include mq(md) {
+    top: rem(-70);
+    left: calc(50% - min(55%, 48rem));
+    z-index: -1;
+  }
+}
+
+.campaign-page__bg img {
+  width: rem(120);
+  max-width: 100%;
+  aspect-ratio: 120/55;
+  @include mq(md) {
+    width: rem(301);
+    aspect-ratio: 301/138;
+  }
+}
+
+.campaign-page__items {
+  margin-top: rem(40);
+  display: grid;
+  grid-template-columns: repeat(1,1fr);
+  justify-items: center;
+  row-gap: rem(40);
+  @include mq(md){
+    grid-template-columns: repeat(2,1fr);
+    column-gap: rem(40);
+    row-gap: rem(80);
+  }
+}
+
+.campaign-page__item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  box-shadow: rem(2) rem(2) rem(10) rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+  width: rem(280);
+  @include mq(md){
+    width: 100%;
+  }
+}
+
+.campaign-page__pagination{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}

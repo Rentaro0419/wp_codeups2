@@ -1,0 +1,18 @@
+@use "global" as *;
+
+.block{
+  display: flex;
+  gap: rem(80);
+  flex-direction: column;
+  @include mq(md) {
+    flex-direction: row;
+  }
+}
+
+.block__left{
+  width: 100%;
+}
+
+.block__right{
+
+}

@@ -1,0 +1,40 @@
+@use "global" as *;
+
+.contact-page {
+  position: relative;
+  margin-top: rem(52);
+  @include mq(md) {
+    margin-top: rem(150);
+  }
+}
+
+.contact-page__bg {
+  position: absolute;
+  top: rem(-24);
+  left: 0;
+  z-index: 5;
+  @include mq(md) {
+    top: rem(-70);
+    left: calc(50% - min(55%, 48rem));
+    z-index: -1;
+  }
+}
+
+.contact-page__bg img {
+  width: rem(120);
+  max-width: 100%;
+  aspect-ratio: 120/55;
+  @include mq(md) {
+    width: rem(301);
+    aspect-ratio: 301/138;
+  }
+}
+
+.contact-page__inner {
+  width: 100%;
+  max-width: 100%;
+  margin: auto;
+  @include mq(md) {
+    max-width: rem(700);
+  }
+}

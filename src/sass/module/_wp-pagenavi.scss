@@ -1,0 +1,106 @@
+@use "global" as *;
+
+.wp-pagenavi {
+  clear: both;
+  text-align: center;
+  margin-top: rem(80);
+  display: flex;
+  gap: rem(12);
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+  display: block;
+  color: $green;
+  border: 1px solid $green;
+  font-family: $third-font-family;
+  padding: rem(6) rem(14);
+  font-size: rem(16);
+}
+
+.wp-pagenavi .page:nth-child(n + 6) {
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.wp-pagenavi span {
+  color: $white;
+  font-family: $third-font-family;
+  background: $green;
+  transition: all 0.3s;
+}
+
+.wp-pagenavi a:hover {
+  color: $white;
+  font-family: $third-font-family;
+  background: $green;
+  transition: all 0.3s;
+  opacity: 1;
+}
+
+.wp-pagenavi .previouspostslink {
+  display: inline-block;
+  margin-right: rem(24);
+  position: relative;
+  width: rem(39);
+  height: rem(39);
+  @include mq(md) {
+    margin-right: rem(40);
+  }
+}
+
+
+.wp-pagenavi .nextpostslink {
+  display: inline-block;
+  margin-left: rem(24);
+  position: relative;
+  width: rem(39);
+  height: rem(39);
+  @include mq(md) {
+    margin-left: rem(40);
+  }
+}
+
+.wp-pagenavi .previouspostslink:before {
+  /* くの字の表示設定 */
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: rem(15); /* ②棒が長くなった分、右へ7px移動 */
+  width: 13px;
+  height: 13px;
+  border-top: 1px solid $green;
+  border-right: 1px solid $green;
+  transform: rotate(225deg);
+}
+
+.wp-pagenavi .nextpostslink:before {
+  /* くの字の表示設定 */
+  content: "";
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: rem(8); /* ②棒が長くなった分、右へ7px移動 */
+  width: 13px;
+  height: 13px;
+  border-top: 1px solid $green;
+  border-right: 1px solid $green;
+  transform: rotate(45deg);
+}
+
+.wp-pagenavi .previouspostslink:hover:before {
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+}
+
+.wp-pagenavi .nextpostslink:hover:before {
+  border-top: 1px solid $white;
+  border-right: 1px solid $white;
+}
+
+

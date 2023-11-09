@@ -1,0 +1,65 @@
+@use "global" as *;
+
+.tab-content {
+  margin-top: rem(16);
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  flex-direction: column;
+  align-items: center;
+  gap: rem(8);
+  padding: rem(24);
+  border: 1px solid $green;
+  @include mq(md) {
+    margin-top: rem(24);
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(48);
+  }
+}
+
+.tab-content__text h3 {
+  font-weight: $bold;
+  font-size: rem(24);
+  line-height: rem(24);
+  padding-bottom: rem(8);
+  border-bottom: 1px solid $green;
+  @include mq(md) {
+    font-weight: $medium;
+  }
+}
+
+.tab-content__text p {
+  margin-top: rem(8);
+  font-size: rem(16);
+  line-height: rem(24);
+}
+
+.tab-content__img {
+  position: relative;
+  width: 100%;
+}
+
+.tab-content__img::before {
+  content: "";
+  display: block;
+  padding-top: ((189 / 297) * 100%);
+  @include mq(md) {
+    padding-top: ((313 / 492) * 100%);
+  }
+}
+
+.tab-content__img img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.js-tab-content{
+  display: none;
+}
+.js-tab-content.show {
+  display: grid;
+}

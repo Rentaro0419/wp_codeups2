@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.thanks {
+  position: relative;
+  margin-top: rem(52);
+  @include mq(md) {
+    margin-top: rem(150);
+  }
+}
+
+.thanks__bg {
+  position: absolute;
+  top: rem(-24);
+  left: 0;
+  z-index: 5;
+  @include mq(md) {
+    top: rem(-70);
+    left: calc(50% - min(55%, 48rem));
+    z-index: -1;
+  }
+}
+
+.thanks__bg img {
+  width: rem(120);
+  max-width: 100%;
+  aspect-ratio: 120/55;
+  @include mq(md) {
+    width: rem(301);
+    aspect-ratio: 301/138;
+  }
+}
+
+.thanks p {
+  text-align: center;
+  font-size: rem(16);
+  line-height: calc(18/16);
+}
+
+.thanks p + p {
+  margin-top: rem(40);
+  line-height: 1.5;
+}

@@ -1,0 +1,340 @@
+@use "global" as *;
+
+
+span.wpcf7-list-item {
+  display: flex;
+  gap: rem(4);
+}
+
+.wpcf7-form-control-wrap {
+  display: block;
+}
+span.wpcf7-list-item {
+  margin: 0 rem(30) 0 0; /* 項目右側の余白設定と、デフォルトの左側の余白を打ち消す */
+  position: relative;
+}
+.wpcf7-list-item-label {
+  cursor: pointer; /* labelにhoverした時にカーソルを表示させる */
+  font-size: rem(16); /* 項目のフォントサイズ */
+}
+input[type="checkbox"] {
+  opacity: 0; /* デフォルトのチェックボックスを見えなくする */
+  position: absolute;
+}
+.wpcf7-list-item-label::before {
+  /* チェックボックスのデザイン */
+  border: 1px solid $green;
+  content: "";
+  display: inline-block;
+  height: rem(22);
+  margin-right: rem(10);
+  position: relative;
+  // top: rem(-1);
+  vertical-align: middle;
+  width: rem(22);
+}
+input[type="checkbox"]:checked + .wpcf7-list-item-label::after {
+  /* チェックアイコン */
+  background: url("../../assets/images/common/check-red.png") no-repeat center;
+  background-size: contain;
+  content: "";
+  height: rem(20);
+  left: 1px;
+  position: absolute;
+  top: rem(3.5);
+  width: rem(20);
+}
+
+input[type="checkbox"]:checked + .wpcf7-list-item-label::before {
+  /* チェックしたボックスの背景色を設定 */
+  background-color: $white;
+}
+
+/* デフォルトのボタン */
+input[type="radio"] {
+  opacity: 0; /* デフォルトのボタンを非表示 */
+  position: absolute;
+}
+
+/* チェック後のボタン */
+input[type="radio"]:checked + .wpcf7-list-item-label::before {
+  background: url("../../assets/images/common/check-red.png") no-repeat center;
+  background-size: contain;
+  content: "";
+  height: rem(14);
+  left: 0;
+  position: absolute;
+  top: rem(3.5);
+  width: rem(14);
+}
+
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: rem(24);
+  @include mq(md) {
+    gap: rem(40);
+  }
+}
+
+.form select{
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid $green;
+  padding: rem(8) rem(16);
+  @include mq(md) {
+    width: rem(480);
+  }
+}
+
+.form textarea{
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid $green;
+  padding: rem(8) rem(16);
+  @include mq(md) {
+    width: rem(480);
+  }
+}
+
+::placeholder {
+  color: $green2;
+}
+
+.form__item {
+  display: flex;
+  flex-direction: column;
+  gap: rem(16);
+  padding-bottom: rem(24);
+  border-bottom: 1px $green dashed;
+  @include mq(md) {
+    flex-direction: row;
+    gap: 0;
+    justify-content: space-between;
+    padding-bottom: rem(40);
+  }
+}
+
+.form__item input{
+    padding: rem(8) rem(16);
+    width: 100%;
+    max-width: 100%;
+      border: 1px solid $green;
+    @include mq(md) {
+    width: rem(480);
+  }
+
+}
+
+.form__item--checkbox {
+  @include mq(md) {
+    gap: rem(50);
+    justify-content: flex-start;
+  }
+}
+
+.form__label {
+  font-weight: $bold;
+  font-size: rem(16);
+}
+
+.form__label:after {
+  content: "必須";
+  background: $red;
+  color: $white;
+  display: inline-block;
+  letter-spacing: 0.4em;
+  text-indent: 0.4em;
+  padding: rem(2) rem(16);
+  text-align: center;
+  font-size: rem(12);
+  margin-left: 8px;
+  font-weight: $regular;
+}
+
+.form__label--none:after {
+  display: none;
+}
+
+.form__checkbox-item {
+  cursor: pointer;
+}
+.form__checkbox-text {
+  /* チェックボックスとテキストの上下を中央に */
+  display: flex;
+  align-items: center;
+  gap: rem(8);
+}
+.form__checkbox-item input {
+  display: none; /* デフォルトのチェックボックスを非表示 */
+}
+.form__checkbox-item input + .form__checkbox-text::before {
+  background-image: url("../../assets/images/common/checkbox.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: rem(14);
+  position: relative;
+  width: rem(14);
+}
+.form__checkbox-item input:checked + .form__checkbox-text::before {
+  background-image: url("../../assets/images/common/checkbox-check.png");
+}
+
+.form__item select {
+  background-image: url(../../assets/images/common/select.png);
+  background-position: right rem(8.8) center;
+  background-repeat: no-repeat;
+  background-size: rem(10) rem(9);
+}
+
+.form__item textarea {
+  width: 100%;
+  height: rem(200);
+}
+
+.form__privacy {
+  margin-top: rem(16);
+  @include mq(md) {
+    margin-top: rem(40);
+    text-align: center;
+  }
+}
+
+.form__privacy span{
+  display: block;
+}
+
+.form__privacy-item {
+  cursor: pointer;
+}
+
+.form__privacy-item input + .form__privacy-text::before {
+  background-image: url("../../assets/images/common/checkbox.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: rem(22);
+  position: relative;
+  width: rem(22);
+}
+.form__privacy-item input:checked + .form__privacy-text::before {
+  background-image: url("../../assets/images/common/check-2x.png");
+}
+
+.form__privacy-text {
+  /* チェックボックスとテキストの上下を中央に */
+  display: flex;
+  justify-content: center;
+  gap: rem(8);
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  width: 75.2%;
+  margin: auto;
+  @include mq(md) {
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.form__btn{
+  text-align: center;
+}
+
+.form__btn input{
+  color: $white;
+}
+
+.form__btn input:hover{
+  color: $green;
+}
+
+
+
+.form__submit {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+  width: rem(202);
+  font-family: $forth-font-family;
+  background: $green;
+  color: $white;
+  font-size: rem(14);
+  line-height: calc(22 / 14);
+  padding: rem(16);
+  z-index: 10;
+  border: solid 1px transparent; /* 透明な境界線を追加 */
+  box-sizing: border-box; /* ボーダーボックスのサイズをボタンの内側に含める */
+  @include mq(md) {
+    width: rem(206);
+  }
+}
+
+.form__submit:hover{
+  background: $white;
+  color: $green;
+  border-color: $green; /* hover時に境界線の色を変更 */
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  opacity: 1;
+}
+
+.form__arrow:before{
+  content: "";
+  position: absolute;
+  border: 1px solid $green;
+  height: calc(100% - 2px);
+  top: rem(6);
+  left: rem(6);
+  width: calc(100% - 2px);
+  z-index: 5;
+}
+
+.form__arrow:after{
+  background: $white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  transform: scale(0, 1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: 5;
+}
+
+.form__submit:hover:after {
+  transform: scale(1, 1);
+}
+
+.form__submit span{
+  text-align: center;
+  position: relative;
+  z-index: 10;
+}
+
+.form__submit:after {
+  content: "";
+  display: inline-block;
+  border-right: 1px solid $white;
+  border-bottom: 1px solid $white;
+  width: rem(40);
+  height: rem(6);
+  margin-left: rem(7);
+  margin-bottom: rem(2);
+  transform: skewX(45deg);
+  z-index: 10;
+}
+
+.form__submit:hover span:after {
+  border-right: 1px solid $green;
+  border-bottom: 1px solid $green;
+}
+
+
+.wpcf7-spinner{
+  display: none !important;
+}

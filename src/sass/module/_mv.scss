@@ -1,0 +1,55 @@
+@use "global" as *;
+
+.mv {
+  height: 100vh;
+  min-height: rem(300);
+  width: 100%;
+  position: relative;
+}
+
+.mv__inner {
+  width: 100%;
+  height: inherit;
+}
+
+.mv__slider,
+.mv__item picture,
+.mv__item img {
+  height: inherit;
+}
+.mv__item img {
+  object-fit: cover;
+}
+
+
+.mv__title {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  @include mq(md) {
+    top: 45%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.mv__title-main {
+  font-family: $third-font-family;
+  text-transform: uppercase;
+  font-weight: $regular;
+  font-size: rem(40);
+  letter-spacing: 0.5em;
+  transform: translateX(5%);
+  @include mq(md) {
+    font-size: rem(80);
+  }
+}
+
+.mv__title-sub {
+  font-family: $forth-font-family;
+  font-size: rem(20);
+  text-align: center;
+}

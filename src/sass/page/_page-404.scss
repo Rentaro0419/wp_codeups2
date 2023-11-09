@@ -1,0 +1,63 @@
+@use "global" as *;
+
+.page-404 {
+  background: $green;
+  color: $white;
+  padding-top: rem(80);
+  padding-bottom: rem(40);
+  position: relative;
+  @include mq(md) {
+    padding-top: rem(90);
+    padding-bottom: rem(149);
+  }
+}
+
+.page-404__inner {
+  position: relative;
+}
+
+.page-404__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: rem(345);
+  @include mq(md) {
+    width: rem(698);
+  }
+}
+
+.page-404__content {
+  margin-top: rem(52);
+  @include mq(md) {
+    margin-top: rem(119);
+  }
+}
+
+.page-404__title {
+  text-indent: 0.5em;
+  text-align: center;
+  font-weight: $regular;
+  font-size: rem(80);
+  font-family: $third-font-family;
+  letter-spacing: 0.5em;
+  @include mq(md) {
+    font-size: rem(160);
+  }
+}
+
+.page-404__text {
+  text-align: center;
+  font-size: rem(16);
+  line-height: calc(24 / 16);
+  @include mq(md) {
+    margin-top: rem(24);
+  }
+}
+
+.page-404__btn {
+  text-align: center;
+  margin-top: rem(40);
+  @include mq(md) {
+    margin-top: rem(80);
+  }
+}

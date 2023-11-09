@@ -1,0 +1,20 @@
+@use "global" as *;
+
+
+.sidebar-title{
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    padding-left: rem(16);
+    border-left: solid rem(8) $green;
+}
+
+.sidebar-title h3{
+  font-weight: $regular;
+  font-size: rem(24);
+}
+
+.sidebar-title img{
+  width: rem(50);
+  aspect-ratio: 1/1;
+}
