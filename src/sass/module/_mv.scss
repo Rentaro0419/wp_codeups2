@@ -1,15 +1,13 @@
 @use "global" as *;
 
 .mv {
-  height: 100vh;
-  min-height: rem(300);
   width: 100%;
-  position: relative;
+  height: 100vh;
 }
-
 .mv__inner {
   width: 100%;
   height: inherit;
+  position: relative;
 }
 
 .mv__slider,
@@ -20,36 +18,33 @@
 .mv__item img {
   object-fit: cover;
 }
-
-
 .mv__title {
-  color: $white;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 2;
-  @include mq(md) {
-    top: 45%;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+  z-index: 10;
+  text-align: center;
+  width: 100%;
 }
 
-.mv__title-main {
-  font-family: $third-font-family;
-  text-transform: uppercase;
-  font-weight: $regular;
+.mv__title-text {
   font-size: rem(40);
-  letter-spacing: 0.5em;
-  transform: translateX(5%);
+  font-family: $third-font-family;
+  font-weight: $regular;
+  letter-spacing: 0.54em;
+  text-indent: 0.54em;
+  color: $white;
+  line-height: calc((48 / 40) * 100%);
   @include mq(md) {
     font-size: rem(80);
+    line-height: calc(100 / 80);
   }
 }
-
-.mv__title-sub {
-  font-family: $forth-font-family;
+.mv__title-subtext {
   font-size: rem(20);
-  text-align: center;
+  font-family: $forth-font-family;
+  font-weight: $regular;
+  color: $white;
+  line-height: calc((33 / 20) * 100%);
 }

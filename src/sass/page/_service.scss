@@ -54,6 +54,10 @@
   line-height: calc(32 / 15.5);
 }
 
+.service__content p{
+  margin-bottom: rem(40);
+}
+
 .service__content ol {
   list-style-type: decimal;
 }
