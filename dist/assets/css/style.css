@@ -810,7 +810,7 @@ input[type=radio]:checked + .wpcf7-list-item-label::before {
 	content: "";
 	display: block;
 	height: 1.5rem;
-	left: 5.3125rem;
+	left: 20%;
 	position: absolute;
 	top: 0.3125rem;
 	width: 1.5rem;
@@ -840,7 +840,6 @@ input[type=radio]:checked + .wpcf7-list-item-label::before {
 }
 
 .price-page__detail {
-	border-right: #408F95 solid 1px;
 	max-width: 100%;
 	padding: 0.25rem;
 	text-align: center;
@@ -853,6 +852,7 @@ input[type=radio]:checked + .wpcf7-list-item-label::before {
 }
 
 .price-page__price {
+	border-left: 1px solid #408F95;
 	max-width: 100%;
 	padding: 1rem;
 	text-align: right;
@@ -2155,7 +2155,7 @@ input[type=radio]:checked + .wpcf7-list-item-label::before {
 }
 
 .header__drawer-nav-item--bold::before {
-	content: url(/assets/images/common/star-fish.svg);
+	content: url(../../assets/images/common/star-fish.svg);
 }
 
 .header__drawer-nav-item--padding a {
@@ -3471,7 +3471,7 @@ html {
 	font-size: 0.9375rem;
 	justify-content: center;
 	padding: 0;
-	width: 28.571%;
+	width: 33%;
 }
 
 .price-page__content dt:before {
@@ -3488,14 +3488,12 @@ html {
 }
 
 .price-page__detail {
-	border-right: none;
 	padding: 1.125rem 1rem;
 	text-align: left;
 	width: 67.7290836653%;
 }
 
 .price-page__price {
-	border-left: 1px solid #408F95;
 	padding: 1.125rem 1rem;
 	width: 32.2709163347%;
 }
